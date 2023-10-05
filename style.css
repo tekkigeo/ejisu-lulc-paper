@@ -1,0 +1,32 @@
+body{
+    font-family: Times, serif, 'Times New Roman';
+    font-size:medium;
+    padding-top: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+}
+
+.intros {
+    line-height: 1.5;
+}
+.imps {
+    /* font-style: italic; */
+    /* font-weight: bold; */
+    text-decoration: underline;
+}
+.pg-text{
+    font-style: normal;
+    text-align: justify;
+    line-height: 1.5; /* spacing */
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+}
+li {
+    list-style: initial;
+    line-height: 1.5;    
+}

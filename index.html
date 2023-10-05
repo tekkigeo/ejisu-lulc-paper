@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejisu LULC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <div class="title">
+            <h1 style="font-size: x-large;">A Decade of Transformation: Land Use and Land Cover Trends and Implications in Ejisu</h1>
+            <p><i><a href="https://gh.linkedin.com/in/yakubuabdulfatawu">Abdul-Fatawu Yakubu </a><br>
+                Sep. 2023</i></p>
+        </div>
+        <div class="intros">
+            <p class="imps">Declaration</p>
+            <p>I declare that this project is an original work, with all external information/resources appropriately cited in-text and referenced. This project is the creation of <a href="https://sites.google.com/view/tekkigeo">tekki GEO</a></p>
+
+            <p class="imps">Important</p>
+            <p>All project data and essential files, including bandsets, shapefiles, and training data, are accessible for download on our <a href="https://sites.google.com/view/tekkigeo">website</a>. We invite you to freely download and utilize these resources for educational purposes and beyond.</p>
+
+            <p class="imps">Keywords</p>
+            <p>Land use, land cover, trend, autocorrelation, landsat, data training, algorithm, spatial analysis, Ejisu</p>
+
+            <p class="imps">Abbreviations</p>
+            <p>LULC - Land use and Land cover <br>
+                SCP - Semi-Automatic Classification Plugin <br>
+                ROI - Region Of Interest <br>
+                QGIS - Quantum Geographic Information System <br>
+                USGS - United States Geological Survey <br>
+                NOAA - National Oceanic and Atmospheric Administration
+                </p>
+        </div>
+        <div class="work">
+            <div class="introduction">
+                <h2>1.0 Introduction</h2>
+                <h3>1.1 Land use and land cover</h3>
+                <!--para 1-->
+                <p class="pg-text">
+                    Land Use and Land Cover (LULC) together describe the physical and human characteristics of the Earth's surface. As articulated by NOAA (2023), ‘land use’ reflects how people use the land, ‘land cover’ describes the physical land type, such as forest or open water. These intertwined aspects encompass a comprehensive understanding of the dynamic interactions between human activities and the natural environment. The activities of man including urbanization, industrial activities, land restoration, etc., coupled with natural phenomena, like erosion, wildfire, flood, and others, could bring about a tremendous LULC changes in a given area. These changes can affect man and the environment. They can have specific and cumulative effects such as air and water quality, climate change, waste generation, extent and quality of wildlife habitat, and human health (EPA, 2023).
+                </p>
+                <!--para 2-->
+                <p class="pg-text">
+                    This article delves into LULC trends over an 8-year span, focusing on four-year intervals (2014, 2018, and 2022). The study looked into three pivotal LULC classifications; built environment, forests, and savannah/shrublands, to discern and illustrate the dynamic changes that have unfolded within the study region. It aims to analyse the LULC trends in Ejisu Municipal, with close attention paid to the degree of urbanization within this region over the 8-year period.
+                </p>
+
+                <h3>1.2 Study region</h3>
+                <p class="pg-text">
+                    Ejisu Municipal is one of the 43 districts in the Ashanti Region, and also one of the fastest-growing urban areas in the region. Its capital, Ejisu, was reported to be the fastest growing city in Ghana (Ghana Statistical Service [GSS], 2012, as cited in Cobbinah & Aboagye, 2017). It is characterized by a semi-deciduous forest cover, bi-modal rainfall pattern, and wet semi-equatorial climate (Ministry of Food and Agriculture [MOFA], n.d.).
+                </p>
+
+                <h3>1.3 Significance</h3>
+                <p class="pg-text">
+                    The Ejisu Municipal area stands at the crossroads of urban development and ecological preservation, poised for significant change. This study endeavours to quantify and comprehend these impending changes, fostering a foundation for sustainable development and enlightened environmental management.
+                </p>
+            </div>
+
+            <div class="methods">
+                <h2>2.0 Methodlogy</h2>
+                <!--data and methods-->
+                <h3>2.1 Data and Tools</h3>
+                <p class="pg-text">
+                    The analysis utilized Landsat 8 imagery for the years 2014 and 2022. Due to the unavailability of Landsat 8 data for the entire study region in 2018, Landsat 7 (ETM+) data was used. All datasets were at a 30-metre spatial resolution and sourced from the USGS website. <br>
+                    
+                    The primary platform for spatial analysis and visualization was Quantum GIS (QGIS), with the Semi-Automatic Classification Plugin playing a central role in data processing. Further, the IBM Statistical Package for the Social Sciences (SPSS 25) was used for statistical calculations and visualizations.
+                </p>
+                <!--preprocesing-->
+                <h3>2.2 Preprocessing</h3>
+                <p class="pg-text">
+                    Before analysis, the data underwent preprocessing. Landsat 8 data from 2014 and 2022 were mostly free of critical issues. However, the 2018 data had challenges, including cloud cover and no-data regions due to spatio-temporal inconsistencies. These were addressed by performing cloud masking to eliminate the cloud values that could interfere with the analysis. Next, the no-data regions were filled using an algorithm that interpolated for no-data values using neighbouring pixels at a given maximum pixel distance. This was done to achieve a complete data coverage.
+                </p>
+                <!--training and classing-->
+                <h3>2.3 Data training and Classification</h3>
+                <p class="pg-text">
+                    The SCP played a central role in the analysis, facilitating the training of our model. This was achieved by defining regions of interest (ROIs) and establishing signatures for each of the three key classes (built, forest, and savannah/shrubland), separately for each year. Notably, each successive year featured a unique training sample and spatial distribution. Utilizing this ample and meticulously trained data, a classification algorithm was deployed. The analysis used the 'Maximum Likelihood' method. <br>
+                    The outcome was a refined classification, and the resulting bands underwent further processing to enable effective visualization and presentation of the results. This also included calculating for areal coverages, percentages, and juxtaposing, using the SPSS package.
+
+                </p>
+            </div>
+
+            <div class="results">
+                <h2>3.0 Results and Discussion</h2>
+                <!--main dis-->
+                <h3>3.1 Main Discussions</h3>
+                <p class="pg-text">
+                    The results of the analysis are presented in the form of maps and charts. Figure 1 illustrates the Land Use and Land Cover (LULC) trends within the municipal area, offering a visual representation of the transition from forest and savannah to urban/built environments. The total municipal area spans approximately 223 square kilometres. Within the selected time frame, a discernible trend emerges: urbanization has exhibited substantial growth, particularly in the more recent period from 2018 to 2022. In 2014, urbanization covered the smallest portion of the area, 36 square km (16.1%), but by 2022, it had become the dominant classification, covering about 92 square km (41.3%) of the total area. This increase resulted in a great loss of the forest cover.
+                </p>
+                <!--fig for map-->
+                <p><i>Figure 1: LULC trends map</i></p>
+                <img class="image" src="img/map.png" alt="Figure 1: LULC trends map">
+                <br>
+                <p class="pg-text">
+                    Shrublands also underwent notable changes. Between 2014 and 2018, the area covered by savannah/shrublands increased sharply from around 34 square kilometres to approximately 87 square kilometres. However, it saw a decline of about 19 square kilometres in 2022, ultimately accounting for approximately 68 square kilometres of the total municipal area. Additionally, as urbanization transformed forested regions, parts of the forest also transitioned into savannah/shrubland. Further statistical details are presented in Figure 2.
+                </p>
+                <!--fig for chart-->
+                <p><i>Figure 2: LULC Trend</i></p>
+                <img class="image" src="img/chart.png" alt="Figure 2: LULC Trend">          
+
+                <h3>3.2 Built vs Forest</h3>
+                <p class="pg-text">
+                    A central transformation observed in the region is the conversion of forested areas into the built environment. A strong negative autocorrelation is evident between these two LULC types. Forested regions experienced a substantial reduction as urbanization surged. The data trajectories suggest that urbanization is poised to continue encroaching upon forested regions in the future. 
+                    <br>
+                    This trend aligns with the findings of Amoah et al. (2012) in their land use modelling of the Ejisu-Juaben district, where they predicted the LULC of 2020 using Landsat data from 1989 and 2007. They observed a significant increase in settlements/bare land (built), from 368.1 hectares in 1989 to 1637.55 hectares in 2007, with an estimated 2199.51 hectares by 2020. Conversely, forested areas decreased from 8019.63 hectares in 1989 to 5252.67 hectares in 2007, with an estimated value of 3551.22 hectares by 2020. Figure 3 provides a change trajectory of the relationship between built and forested areas from this study.
+                </p>
+                <!--fig for vs-->
+                <p><i>Figure 3: Built vs Forest</i></p>
+                <img class="image" src="img/b_vs_f.png" alt="Figure 3: Built vs Forest">
+                <br>
+                <br>
+            </div>
+
+            <div class="conclusion">
+                <!--concl-->
+                <h2>4.0 Conclusion and Recommendations</h2>
+                <p class="pg-text">
+                    The study looked at the trends in land use and land cover (LULC) in the Ejisu Municipal. It revealed a significant transformation in Ejisu Municipal's LULC over the past 8 years (2014 to 2022). Urbanization emerged as the dominant trend, transitioning vast forest and savannah/shrubland areas into built environment. This urbanization trend, with a remarkable growth rate from 2018 to 2022, poses critical implications for the municipal's physical environment and inhabitants, necessitating proactive measures. <br>
+                    Hence, the study recommends embracing sustainable urban planning, emphasizing green spaces and infrastructure. Concurrently, promoting environmental conservation through afforestation and reforestation; formulation and enforcement of balanced policies that account for the long-term ecological and societal repercussions of urbanization. These collective actions not only address the immediate challenges but also contribute to the achievement of Sustainable Development Goals (SDGs), particularly SDG 11 (Sustainable Cities and Communities), SDG 13 (Climate Action), and SDG 15 (Life on Land).
+            </div>
+
+            <div class="lim">
+                <!--lim-->
+                <h2>5.0 Limitations and Future Directions</h2>
+                <p class="pg-text">
+                    The analysis agglomerated the LULC classes and did not subdivide into farmlands, wetlands, bare soil, etc. It also considered a single municipal in the region, and not the whole expanse of the region, or an even different spatial context. Future projects should look into deploying and presenting a rich and undivided classification. Different spatial locations should also be considered, and analysis could be performed on multiple spatial regions for comparative analysis.
+                </p>
+            </div>
+
+            <div class="ref">
+                <h2>References</h2>
+                <ul>
+                    <li>
+                        Amoah A. S., Osei E. M., Duker A. A. and Osei K. N. (2012). Modeling land use change for Ejisu-Juaben district of Ghana. <i>Journal of Geomatics. Vol 6 No.1</i>
+                    </li>
+                    <li>
+                        NOAA (2023, January 20). <i>What is the difference between land cover and land use? National Ocean Service website</i>, <a href="https://oceanservice.noaa.gov/facts/lclu.html">oceanservice.noaa.gov/facts/lclu.html</a>, 01/20/23.</li>
+                    <li>
+                        U.S. Environmental Protection Agency (2023). <i>What are the trends in land use and their effects on human health and the environment?</i> <a href="https://www.epa.gov/report-environment/land-use#effects">epa.gov/report-environment/land-use#effects</a>
+                    </li>
+                    <li>
+                        Cobbinah P. B. & Aboagye H. N. (2017). A Ghanaian twist to urban sprawl. <i>Land Use Policy, Volume 61,</i> Pages 231-241, <a href="https://doi.org/10.1016/j.landusepol.2016.10.047">doi.org/10.1016/j.landusepol.2016.10.047</a>
+                    </li>
+                    <li>
+                        Ghana Statistical Service (2012). <i>Population and Housing Census. Summary Report of Final Results. Ghana Statistical Service 2010</i>. Accra: Sakoa Press Ltd.
+                    </li>
+                    <li>
+                        Ministry of Food and Agriculture. (n.d.) <i>Ejisu-Juaben</i> <a href="https://mofa.gov.gh/site/directorates/district-directorates/ashanti-region/162-ejisu-juaben">mofa.gov.gh/site/dir/ashanti/ejisu</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
